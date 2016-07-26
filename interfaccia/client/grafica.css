@@ -1,0 +1,45 @@
+#title{
+	text-align: center;
+	font-family: Verdana;
+    color: #f0f0f0;
+    font-size: 40px;
+	margin-bottom: 0;
+	margin-top: -8px;
+	margin-left: -8px;
+	margin-right: -8px;
+    background-color: #204563;
+}
+
+img{
+    position: absolute;
+    left: 0px;
+    top :0px;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    opacity: 300%;
+
+}
+
+body{
+    background-image: url(C:\Users\quontini\Desktop\Internato\interfaccia\gay.jpg);
+}
+
+.bottone{
+	
+	background-color: url(./bottone.gif);
+	width : 150px; 
+	height : 100px;
+	float: right;
+	margin-top: 12%;
+	margin-right: 10%;
+}
+
+.bottone1{
+	float: left;
+	background-color: url(./bottone.gif);
+	width : 150px; 
+	height : 100px;
+	margin-top: 12%;
+	margin-left: 10%;
+}
