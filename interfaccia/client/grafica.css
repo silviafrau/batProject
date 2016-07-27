@@ -27,17 +27,17 @@ body{
 
 .bottone{
 	
-	background-color: url(./bottone.gif);
+	background-color: url(./PolFrame_close.jpg);
 	width : 150px; 
 	height : 100px;
 	float: right;
-	margin-top: 12%;
-	margin-right: 10%;
+	margin-top: 100%;
+	margin-right: 100%;
 }
 
 .bottone1{
 	float: left;
-	background-color: url(./bottone.gif);
+	background-color: url(./PolFrame_open.jpg);
 	width : 150px; 
 	height : 100px;
 	margin-top: 12%;
