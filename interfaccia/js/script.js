@@ -28,13 +28,20 @@ var buttonMenu3 = $("<button></button>");
   $("#name").append(elementoMenu);
 
 }
-/*
-*/
 
 $(document).ready(function(){
 
   $("#name").click(function(){
     menu();
   });
+  /*
+  $("#RINOMINA").click(function(){
+  });
 
+  $("#VISUALIZZA").click(function(){
+  });
+
+  $("#CANCELLA").click(function(){
+  });
+  */
 });
