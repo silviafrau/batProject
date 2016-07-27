@@ -30,3 +30,36 @@
 	height: auto;
 	width: 50%;
 }
+
+#opzioni{
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	background-color: #f0f0f0;
+	font-size: 14px;
+	border-radius: 8px;
+}
+
+#home{
+	position: absolute;
+	left: 15px;
+	top: 15px;
+	background-color: #f0f0f0;
+	font-size: 14px;
+	border-radius: 8px;
+	/*Da aggiungere grafica di Davide */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
