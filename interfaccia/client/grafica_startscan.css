@@ -1,0 +1,32 @@
+#title{
+	text-align: center;
+	font-family: Verdana;
+    color: #f0f0f0;
+    font-size: 40px;
+	margin-bottom: 0;
+	margin-top: -8px;
+	margin-left: -8px;
+	margin-right: -8px;
+    background-color: #204563;
+}
+
+#body{
+	background-color: #f0f0f0;
+}
+
+
+
+#img_sx{
+	float: left;
+	margin-left: -8px;
+	height:	auto;
+	width: 50%;
+}
+
+
+#img_dx{
+	float: right;
+	margin-right:  -8px;
+	height: auto;
+	width: 50%;
+}

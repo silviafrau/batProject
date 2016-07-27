@@ -1,3 +1,16 @@
+function aggiungiButton (nome){
+  var elementoEleneco=$("<button></button>");
+
+  $(elementoEleneco).attr("type", "button");
+  $(elementoEleneco).attr("id", "name");
+  elementoEleneco.text(nome);
+
+}
+
+
+
+
+
 function menu(){
   var elementoMenu=$("<menu></menu");
 //<button type="button" name="Rinomina" id="RINOMINA">RINOMINA</button>
