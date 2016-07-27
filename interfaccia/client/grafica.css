@@ -16,7 +16,7 @@ img{
     top :0px;
     z-index: -1;
     width: 100%;
-    height: auto;
+    height: 100%;
     opacity: 300%;
 
 }
@@ -25,21 +25,25 @@ body{
     background-image: url(C:\Users\quontini\Desktop\Internato\interfaccia\gay.jpg);
 }
 
-.bottone{
+.bot_riepilogo{
 	
 	background-color: url(./PolFrame_close.jpg);
-	width : 150px; 
-	height : 100px;
+    background-size: cover;
+	width : 300px; /*prop 1 : 1,095*/
+	height : 328px;
 	float: right;
-	margin-top: 100%;
-	margin-right: 100%;
+	margin-top: 10%;
+	margin-right: 8%;
+    opacity : 0.6;
 }
 
-.bottone1{
+.bot_scan{
+	background-color: url(./PolFrame_close.jpg);
+    background-size: cover;
+	width : 300px; /*prop 1 : 1,095*/
+	height : 328px;
 	float: left;
-	background-color: url(./PolFrame_open.jpg);
-	width : 150px; 
-	height : 100px;
-	margin-top: 12%;
-	margin-left: 10%;
+	margin-top: 10%;
+	margin-left: 8%;
+    opacity : 0.6;
 }
