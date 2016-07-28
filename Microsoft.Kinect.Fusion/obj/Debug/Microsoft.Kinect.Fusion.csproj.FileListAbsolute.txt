@@ -1,0 +1,9 @@
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\Microsoft.Kinect.Fusion\bin\Debug\Microsoft.Kinect.Fusion.dll
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\Microsoft.Kinect.Fusion\bin\Debug\Microsoft.Kinect.Fusion.pdb
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\Microsoft.Kinect.Fusion\bin\Debug\Microsoft.Kinect.dll
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\Microsoft.Kinect.Fusion\bin\Debug\Microsoft.Kinect.xml
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.csprojResolveAssemblyReference.cache
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.Resources.resources
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.csproj.GenerateResource.Cache
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.dll
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.pdb

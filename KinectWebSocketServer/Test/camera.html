@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="../js/pako.js"></script>
+    <script type="text/javascript" src="../js/Kinect2.js"></script>
+    <script type="text/javascript" src="../js/BigInteger.min.js"></script>
+    <title>RGB Camera test</title>
+    <style>
+        .rotate  {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="" id="rgbImg" style="position:absolute; top:0px; left:0px" />
+        <canvas id="rgbCanvas" width="1920" height="1080"  style="position:absolute; top:0px; left:0px" />
+        <script>
+            var sensor = new kinect2.Sensor();
+            
+            sensor.onBodyFrame = function (bodyArray) {
+                for (var b in bodyArray) {
+                    var body = bodyArray[b];
+                    var canvas = document.getElementById('rgbCanvas');
+                    var context = canvas.getContext('2d');
+                    var pos = body.joints[kinect2.JointType.HandLeft].rgbPosition;
+                    var centerX = pos.x;
+                    var centerY = pos.y;
+                    var radius = 30;
+                    
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    context.beginPath();
+                    context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+                    context.fillStyle = 'green';
+                    context.fill();
+                    context.lineWidth = 5;
+                    context.strokeStyle = '#003300';
+                    context.stroke();
+                }
+            }
+
+            sensor.open(function () {
+                sensor.setRgbImage(document.getElementById('rgbImg'));
+                sensor.receiveColorFrames(true);
+                sensor.receiveBodyFrames(true);
+            });
+        </script>
+     </div>
+</body>
+</html>

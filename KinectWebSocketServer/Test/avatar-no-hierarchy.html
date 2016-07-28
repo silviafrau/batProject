@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <title>Babylon - Getting Started</title>
+    <!--- link to the last version of babylon --->
+    <script src="../js/babylon.2.2.js"></script>
+    <script type="text/javascript" src="../js/pako.js"></script>
+    <script type="text/javascript" src="../js/Kinect2.js"></script>
+    <script type="text/javascript" src="../js/BigInteger.min.js"></script>
+    <style>
+        html, body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #renderCanvas {
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="renderCanvas"></canvas>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            // get the canvas DOM element
+            var canvas = document.getElementById('renderCanvas');
+
+            // load the 3D engine
+            var engine = new BABYLON.Engine(canvas, true);
+
+            // createScene function that creates and return the scene
+            var createScene = function () {
+                // create a basic BJS Scene object
+                var scene = new BABYLON.Scene(engine);
+
+                var camera = new BABYLON.ArcRotateCamera("ArcRotateCamera", 1, 0.8, 50, new BABYLON.Vector3(0, 0, 0), scene);
+
+                // target the camera to scene origin
+                // camera.setTarget(BABYLON.Vector3.Zero());
+
+                // attach the camera to the canvas
+                camera.attachControl(canvas, false);
+
+                // create a basic light, aiming 0,1,0 - meaning, to the sky
+                var light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0, 1, 0), scene);
+
+                var factor = 10.0;
+                var boneLength = function (type) {
+                    switch (type) {
+                        case kinect2.JointType.AnkleLeft:
+                        case kinect2.JointType.AnkleRight:
+                            return 0.2;
+
+                        case kinect2.JointType.ShoulderLeft:
+                        case kinect2.JointType.ShoulderRight:
+                        case kinect2.JointType.ElbowLeft:
+                        case kinect2.JointType.ElbowRight:
+                            return 0.15;
+
+                        case kinect2.JointType.FootLeft:
+                        case kinect2.JointType.FootRight:
+                            return 0.1;
+
+                        case kinect2.JointType.HandLeft:
+                        case kinect2.JointType.HandRight:
+                        case kinect2.JointType.HandTipLeft:
+                        case kinect2.JointType.HandTipRight:
+                        case kinect2.JointType.Neck:
+
+                            return 0.05;
+
+                        case kinect2.JointType.Head:
+                            return 0.1;
+
+                        case kinect2.JointType.HipLeft:
+                        case kinect2.JointType.HipRight:
+                            return 0.1;
+
+                        case kinect2.JointType.KneeLeft:
+                        case kinect2.JointType.KneeRight:
+                            return 0.3;
+
+                       
+                        case kinect2.JointType.SpineMid:
+                        case kinect2.JointType.SpineShoulder:
+                        case kinect2.JointType.WristLeft:
+                        case kinect2.JointType.WristRight:
+                            return 0.2;
+                        default:
+                            return 0.0;
+
+
+                    }
+                }
+
+                var createBone = function (node) {
+
+                    var bone = new BABYLON.Mesh.CreateCylinder("bone" + node.jointType, factor * boneLength(node.jointType), 0.25, 0.25, 6, 1, scene, true);
+                    BABYLON.Mesh.create
+                    if (node.parent != null) {
+                        var parent = scene.getMeshByName("bone" + node.parent);
+                    }
+
+
+                    for (var c in node.children) {
+                        createBone(node.children[c])
+                    }
+                }
+
+                // create a built-in "ground" shape; its constructor takes the same 5 params as the sphere's one
+                //var ground = new BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene);
+
+                var showAxis = function (size) {
+                    var axisX = BABYLON.Mesh.CreateLines("axisX", [new BABYLON.Vector3.Zero(), new BABYLON.Vector3(size, 0, 0)], scene);
+                    axisX.color = new BABYLON.Color3(1, 0, 0);
+                    var axisY = BABYLON.Mesh.CreateLines("axisY", [new BABYLON.Vector3.Zero(), new BABYLON.Vector3(0, size, 0)], scene);
+                    axisY.color = new BABYLON.Color3(0, 1, 0);
+                    var axisZ = BABYLON.Mesh.CreateLines("axisZ", [new BABYLON.Vector3.Zero(), new BABYLON.Vector3(0, 0, size)], scene);
+                    axisZ.color = new BABYLON.Color3(0, 0, 1);
+                };
+
+                showAxis(10);
+
+                createBone(kinect2.boneHierarchy);
+                // return the created scene
+                return scene;
+            }
+
+
+
+            // call the createScene function
+            var scene = createScene();
+
+
+
+            // run the render loop
+            engine.runRenderLoop(function () {
+                scene.render();
+            });
+
+            // the canvas/window resize event handler
+            window.addEventListener('resize', function () {
+                engine.resize();
+            });
+
+            var fromRightToLeftHandQuaternion = function (orientation) {
+                return new BABYLON.Quaternion(
+                      orientation.x ,
+                      orientation.y ,
+                      -orientation.z ,
+                      -orientation.w );
+            };
+
+            var scaleFactor = 6.0;
+            var drawBone = function (node, body) {
+
+                var currentMesh = scene.getMeshByName("bone" + node.jointType);
+                var jOrientation = body.jointOrientation[node.jointType];
+                var hasParent = node.parent != null;
+
+                if(jOrientation.orientation.x === 0.0 && jOrientation.orientation.y === 0.0 &&
+                jOrientation.orientation.z === 0.0 && jOrientation.orientation.w === 0.0 && node.parent!= null) {
+                    jOrientation = body.jointOrientation[node.parent];
+                    hasParent = false;
+                }
+
+                if (node.jointType === kinect2.JointType.SpineBase) {
+                    var pos = new BABYLON.Vector3(
+                         scaleFactor * body.joints[node.jointType].position.x,
+                         scaleFactor * body.joints[node.jointType].position.y,
+                         -scaleFactor * body.joints[node.jointType].position.z);
+                    currentMesh.setAbsolutePosition(pos)
+                    
+                } else {
+                    var pos = new BABYLON.Vector3(
+                            scaleFactor * 0.5 * (body.joints[node.parent].position.x + body.joints[node.jointType].position.x),
+                            scaleFactor * 0.5 * (body.joints[node.parent].position.y + body.joints[node.jointType].position.y),
+                            -scaleFactor * 0.5 * (body.joints[node.parent].position.z + body.joints[node.jointType].position.z)
+                        );
+                    currentMesh.setAbsolutePosition(pos)
+                }
+              
+                var quaternion = fromRightToLeftHandQuaternion(jOrientation.orientation);
+              
+                currentMesh.rotationQuaternion = quaternion;
+ 
+                for (var c in node.children) {
+                    drawBone(node.children[c], body)
+                }
+            }
+
+            var sensor = new kinect2.Sensor();
+
+            sensor.onBodyFrame = function (bodyArray) {
+                for (var b in bodyArray) {
+                    var body = bodyArray[b];
+
+                    drawBone(kinect2.boneHierarchy, body);
+                }
+            }
+
+            sensor.open(function () {
+                sensor.receiveBodyFrames(true);
+            });
+
+            var printTraverse = function (node, pre) {
+                for (var key in kinect2.JointType) {
+                    if (kinect2.JointType[key] == node.jointType) {
+                        console.log("" + pre + key);
+                    }
+                }
+
+                for (var c in node.children) {
+                    printTraverse(node.children[c], pre + "-")
+                }
+
+            }
+
+            //printTraverse(kinect2.boneHierarchy, "");
+        });
+        // kinect init
+
+    </script>
+</body>
+</html>
+

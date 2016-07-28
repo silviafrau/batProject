@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Node Kinect2 Client</title>
+    <script type="text/javascript" src="../js/pako.js"></script>
+    <script type="text/javascript" src="../js/Kinect2Fusion.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../js/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="../js/jquery-ui.structure.min.css">
+    <script src="../js/jquery-ui.min.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <canvas id="bodyCanvas" width="512" height="424"></canvas>
+        <script src="../js/javascriptIndex.js">
+            
+        </script>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Actions</div>
+                    <div class="panel-body">
+                        <button id="btn-save" type="button" class="btn btn-default btn-lg btn-block">
+                            <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
+                            <span class="icon-label">Save Mesh</span>
+                        </button>
+                        <button id="btn-reset-rec" type="button" class="btn btn-default btn-lg btn-block">
+                            <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+                            <span class="icon-label">Reset Reconstruction</span>
+                        </button>
+                        <button id="btn-reset-camera" type="button" class="btn btn-default btn-lg btn-block">
+                            <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
+                            <span class="icon-label">Reset Camera</span>
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Image Options</div>
+                    <div class="panel-body">
+                        <h3>3D View Texturing</h3>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="rd-texture" id="rd-volume" value="option" checked> Volume
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="rd-texture" id="rd-color" value="option"> Color
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="rd-texture" id="rd-normals" value="option"> Normals
+                            </label>
+                        </div>
+                        <h3>Reconstruction</h3>
+                       
+                        <div class="checkbox">
+                            <label>
+                                <input id="ckb-pause" type="checkbox"> Pause Integration
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input id="ckb-camera-pose" type="checkbox" checked="checked"> Use Camera Pose Finder
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input id="ckb-mirror-depth" type="checkbox"> Mirror Depth
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input id="ckb-kinect-view" type="checkbox" checked> Kinect View
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Integration Settings</div>
+                    <div class="panel-body">
+                        <h3>Depth Threshold</h3>
+                        <p>
+                            <label for="depth-range">Range:</label>
+                            <input type="text" id="depth-range" readonly style="border:0; font-weight:bold;">
+                        </p>
+                        <div id="sl-depth-range"></div>
+
+                        <h3>Volume Max Integration Weight</h3>
+                        <p>
+                            <label for="">Value:</label>
+                            <input type="text" id="int-weight" readonly style="border:0; font-weight:bold;">
+                        </p>
+                        <div id="sl-int-weight"></div>
+
+
+                        <h3>Volume Voxel per Meter</h3>
+                        <p>
+                            <label for="">Value:</label>
+                            <input type="text" id="voxel-meter" readonly style="border:0; font-weight:bold;">
+                        </p>
+                        <div id="sl-voxel-meter"></div>
+
+                        <h3>Volume Voxel Resolution</h3>
+                        <p>
+                            <label for="">X:</label>
+                            <input type="text" id="res-x" readonly style="border:0; font-weight:bold;">
+                        </p>
+                        <div id="sl-res-x"></div>
+                        <p>
+                            <label for="">Y:</label>
+                            <input type="text" id="res-y" readonly style="border:0; font-weight:bold;">
+                        </p>
+                        <div id="sl-res-y"></div>
+                        <p>
+                            <label for="">Z:</label>
+                            <input type="text" id="res-z" readonly style="border:0; font-weight:bold;">
+                        </p>
+                        <div id="sl-res-z"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal file dialog -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="create-mesh-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Create Mesh</h4>
+                    </div>
+                    <div class="modal-body" id="create-mesh-name">
+                        <div class="form-group">
+                            <label for="txt-mesh-name">File name</label>
+                            <input type="text" class="form-control" id="txt-mesh-name" placeholder="e.g. reconstruction">
+                        </div>
+                    </div>
+                    <div class="modal-body" id="create-mesh-wait">
+                        Please wait ...
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                <span class="sr-only">In progress</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body"  id="create-mesh-confirm">
+                        Mesh creation completed
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-mesh-create" type="button" class="btn btn-primary">Create</button>
+                        <button id="btn-mesh-download" type="button" class="btn btn-primary disabled">Download</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+    </div>
+</body>
+</html>

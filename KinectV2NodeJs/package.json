@@ -1,0 +1,13 @@
+{
+  "name": "KinectV2NodeJs",
+  "version": "0.0.0",
+  "description": "KinectV2NodeJs",
+  "main": "app.js",
+  "author": {
+    "name": "Davide",
+    "email": ""
+  },
+  "dependencies": {
+    "edge": "^4.0.0"
+  }
+}

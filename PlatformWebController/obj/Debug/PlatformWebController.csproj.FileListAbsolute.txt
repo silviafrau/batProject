@@ -1,0 +1,10 @@
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\PlatformWebController\bin\Debug\PlatformWebController.exe.config
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\PlatformWebController\bin\Debug\PlatformWebController.exe
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\PlatformWebController\bin\Debug\PlatformWebController.pdb
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\PlatformWebController\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\PlatformWebController\bin\Debug\websocket-sharp.dll
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\PlatformWebController\bin\Debug\websocket-sharp.pdb
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\PlatformWebController\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\PlatformWebController\obj\Debug\PlatformWebController.csprojResolveAssemblyReference.cache
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\PlatformWebController\obj\Debug\PlatformWebController.exe
+C:\Users\Vakna_000\Desktop\Internato\VisualStudioProject\PlatformWebController\obj\Debug\PlatformWebController.pdb
