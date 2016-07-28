@@ -10,10 +10,11 @@
     background-color: #204563;
 }
 
-#rgbCanvas{
+#rgbImg{
     position: absolute;
     left: 0px;
     top :0px;
+	margin-top: -50px;
     z-index: -1;
     width: 100%;
     height: 100%;
@@ -21,6 +22,22 @@
 
 }
 
+#rgbCanvas{
+    position: absolute;
+    left: 0px;
+    top :0px;
+	margin-top: -50px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    /*opacity: 300%; */
+
+}
+
+#container{
+	/*margin-top: -40%;*/
+
+}
 body{
     background-image: url(C:\Users\quontini\Desktop\Internato\interfaccia\gay.jpg);
 }
