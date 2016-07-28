@@ -1,15 +1,4 @@
-function aggiungiButton (nome){
-  var elementoEleneco=$("<button></button>");
-
-  $(elementoEleneco).attr("type", "button");
-  $(elementoEleneco).attr("id", "name");
-  elementoEleneco.text(nome);
-
-}
-
-
-
-
+/*
 
 function menu(){
   var elementoMenu=$("<menu></menu");
@@ -41,13 +30,11 @@ var buttonMenu3 = $("<button></button>");
   $("#name").append(elementoMenu);
 
 }
+*/
 
 $(document).ready(function(){
+  
 
-  $("#name").click(function(){
-    menu();
-  });
-  /*
   $("#RINOMINA").click(function(){
   });
 
@@ -56,5 +43,5 @@ $(document).ready(function(){
 
   $("#CANCELLA").click(function(){
   });
-  */
+
 });

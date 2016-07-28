@@ -13,22 +13,30 @@ function menuOpzioni() {
   buttonMenu2.text("RESET");
   $(elementoMenu).append($(buttonMenu2));
 
-  var buttonMenu2 = $("<button></button>");
-  $(buttonMenu2).attr("type", "button");
-  $(buttonMenu2).attr("id", "RESET");
-  buttonMenu2.text("RESET");
-  $(elementoMenu).append($(buttonMenu2));
-
 
   $("#opzioni").append(elementoMenu);
 
 }
 
-
+var flag=true;
 
 $(document).ready(function(){
   $("#opzioni").click(function(){
-    menuOpzioni();
+    if(flag){
+      menuOpzioni();
+      flag=false;
+    }
+
   });
 
+  $("#START").click(function(){
+    console.log("START");
+    //funzione della scansione
+  });
+
+  $("#RESET").click(function(){
+    console.log("RESET");
+    //funzione reset scansione
+  });
+  
 });
