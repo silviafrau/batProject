@@ -14,7 +14,7 @@ function menuOpzioni() {
   $(elementoMenu).append($(buttonMenu2));
 
 
-  $("#opzioni").append(elementoMenu);
+  $("#menuOpzioni").append(elementoMenu);
 
 }
 
@@ -38,5 +38,5 @@ $(document).ready(function(){
     console.log("RESET");
     //funzione reset scansione
   });
-  
+
 });
