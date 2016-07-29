@@ -15,22 +15,40 @@
 }
 
 .panel-heading{
-	background-color: #204563 !important; 
+	background-color: #204563 !important;
 	border-bottom-color: #204563 !important;
-	border-left-color: #204563 !important; 
-	border-right-color: #204563 !important; 
-	border-top-color: #204563 !important; 
-	
-}
+	border-left-color: #204563 !important;
+	border-right-color: #204563 !important;
+	border-top-color: #204563 !important;
 
-#miao{
+}
+/*Actions*/
+#menu1{
 	border-bottom-color: #204563 !important;
-	border-left-color: #204563 !important; 
-	border-right-color: #204563 !important; 
-	border-top-color: #204563 !important; 
+	border-left-color: #204563 !important;
+	border-right-color: #204563 !important;
+	border-top-color: #204563 !important;
 	width:65% !important;
 }
-	
+/*Image Options*/
+#menu2{
+	border-bottom-color: #204563 !important;
+	border-left-color: #204563 !important;
+	border-right-color: #204563 !important;
+	border-top-color: #204563 !important;
+	width:65% !important;
+}
+/*Integration Settings*/
+#menu3{
+	border-bottom-color: #204563 !important;
+	border-left-color: #204563 !important;
+	border-right-color: #204563 !important;
+	border-top-color: #204563 !important;
+	width:65% !important;
+	width:1350!important;
+	height:210!important;
+}
+
 #btn-save{
 	width: 100%!important;
 	font-size:14px  !important;
@@ -47,7 +65,7 @@
 	font-size:14px !important;
 	font-weight:bold !important;
 }
- 
+
 
 #img_sx{
 	float: left;
@@ -81,17 +99,3 @@
 	font-size: 14px;
 	border-radius: 8px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -25,7 +25,7 @@
 		<h1 id="title">Inizio scansione</h1>
 
 		<div class="container">
-        <canvas id="bodyCanvas" width="512" height="424"></canvas>
+        <canvas id="bodyCanvas" width="512" height="424" style="position:absolute; top:36px; left:0px"></canvas>
 				<script>
 				var fusion = new kinect2Fusion.Kinect2Fusion();
 				fusion.setReconstructionCanvas(document.getElementById('bodyCanvas'));
@@ -37,7 +37,7 @@
 
 		<div class="row">
             <div class="col-md-4">
-                <div class="panel panel-primary" id="miao">
+                <div class="panel panel-primary" id="menu1" style="position:absolute; top:0.6px; left:450px">
                     <div class="panel-heading">Actions</div>
                     <div class="panel-body">
                         <button id="btn-save" type="button" class="btn btn-default btn-lg btn-block">
@@ -57,7 +57,7 @@
                 </div>
 
 
-                <div class="panel panel-primary" id="miao">
+                <div class="panel panel-primary" id="menu2" style="position:absolute; top:200px; left:450px">
                     <div class="panel-heading">Image Options</div>
                     <div class="panel-body">
                         <h3>3D View Texturing</h3>
@@ -103,7 +103,7 @@
             </div>
             <div class="col-md-8">
 
-                <div class="panel panel-primary" id="miao">
+                <div class="panel panel-primary" id="menu3" style="position:absolute; top:424px; left:-480px">
                     <div class="panel-heading">Integration Settings</div>
                     <div class="panel-body">
                         <h3>Depth Threshold</h3>
@@ -150,7 +150,7 @@
         </div>
 
 				<div class="container">
-		        <img src="" id="rgbImg" style="position:absolute; top:36px; left:735px" width="512" height="424"/>
+		        <img src="" id="rgbImg" style="position:absolute; top:36px; right:0px" width="512" height="424"/>
 		        <canvas id="rgbCanvas" width="512" height="424"  style="position:absolute; top:0px; left:0px" />
 		        <script>
 		            var sensor = new kinect2.Sensor();
@@ -220,12 +220,10 @@
     </div>
 	<div>
 			<button type="submit" id="home" onclick="window.location.href='./interfaccia.html#'">Home</button>
-			
+
 		</div>
 
 
 	</body>
 
 </html>
-
-
