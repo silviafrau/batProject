@@ -1,13 +1,18 @@
+
 #title{
+	position: relative;
+	top: 0px;
+	width: 100%;
+	height: 4%;
+    background-color: #204563;
+}
+
+#testo1{
+	margin: auto;
 	text-align: center;
 	font-family: Verdana;
     color: #f0f0f0;
     font-size: 40px;
-	margin-bottom: 0;
-	margin-top: -8px;
-	margin-left: -8px;
-	margin-right: -8px;
-    background-color: #204563;
 }
 
 #body{
@@ -15,40 +20,22 @@
 }
 
 .panel-heading{
-	background-color: #204563 !important;
+	background-color: #204563 !important; 
 	border-bottom-color: #204563 !important;
-	border-left-color: #204563 !important;
-	border-right-color: #204563 !important;
-	border-top-color: #204563 !important;
-
-}
-/*Actions*/
-#menu1{
-	border-bottom-color: #204563 !important;
-	border-left-color: #204563 !important;
-	border-right-color: #204563 !important;
-	border-top-color: #204563 !important;
-	width:65% !important;
-}
-/*Image Options*/
-#menu2{
-	border-bottom-color: #204563 !important;
-	border-left-color: #204563 !important;
-	border-right-color: #204563 !important;
-	border-top-color: #204563 !important;
-	width:65% !important;
-}
-/*Integration Settings*/
-#menu3{
-	border-bottom-color: #204563 !important;
-	border-left-color: #204563 !important;
-	border-right-color: #204563 !important;
-	border-top-color: #204563 !important;
-	width:65% !important;
-	width:1350!important;
-	height:210!important;
+	border-left-color: #204563 !important; 
+	border-right-color: #204563 !important; 
+	border-top-color: #204563 !important; 
+	
 }
 
+#miao{
+	border-bottom-color: #204563 !important;
+	border-left-color: #204563 !important; 
+	border-right-color: #204563 !important; 
+	border-top-color: #204563 !important; 
+	width:65% !important;
+}
+	
 #btn-save{
 	width: 100%!important;
 	font-size:14px  !important;
@@ -65,21 +52,36 @@
 	font-size:14px !important;
 	font-weight:bold !important;
 }
-
+ 
 
 #img_sx{
-	float: left;
-	margin-left: -8px;
-	height:	auto;
-	width: 50%;
+	position:absolute !important;
+	left: 0px !important;
+	width: 770px;
+	margin: auto !important;
+	top: 0px;
+	height: 554px;
 }
 
+#bodyCanvas{
+	position: absolute;
+	height: 554px;
+	width: 798px;
+}
 
 #img_dx{
-	float: right;
-	margin-right:  -8px;
+	position:absolute !important;
+	right: 0px !important;
+	width: 770px;
+	margin: auto !important;
+	top: 0px;
 	height: auto;
-	width: 50%;
+}
+
+#rgbImg{
+	position:absolute !important;
+	height: 554px;
+	width: 985px;
 }
 
 /* #opzioni{
@@ -98,4 +100,35 @@
 	background-color: #f0f0f0;
 	font-size: 14px;
 	border-radius: 8px;
+}
+
+#centro{
+	position: absolute;
+	height: 273px;
+	width: 589px;
+	right: 25%;
+}
+
+#panel-centro{
+	position:absolute;
+	width: auto;
+}
+
+#menu2{
+	position: relative;
+	top: -15px;
+}
+
+#div1{
+	position: relative;
+	width:100% !important;
+	height: 554px;
+	max-height:60%;
+}
+
+#div2{
+    position: relative;
+	
+	top: 100000px;
+	border: 2px;
 }

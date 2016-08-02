@@ -18,3 +18,13 @@ C:\Users\Vakna_000\Desktop\Progetto\batProject\PlatformWebController\bin\Debug\N
 C:\Users\Vakna_000\Desktop\Progetto\batProject\PlatformWebController\obj\Debug\PlatformWebController.csprojResolveAssemblyReference.cache
 C:\Users\Vakna_000\Desktop\Progetto\batProject\PlatformWebController\obj\Debug\PlatformWebController.exe
 C:\Users\Vakna_000\Desktop\Progetto\batProject\PlatformWebController\obj\Debug\PlatformWebController.pdb
+C:\Users\quontini\Desktop\Internato\batProject\PlatformWebController\bin\Debug\PlatformWebController.exe.config
+C:\Users\quontini\Desktop\Internato\batProject\PlatformWebController\bin\Debug\PlatformWebController.exe
+C:\Users\quontini\Desktop\Internato\batProject\PlatformWebController\bin\Debug\PlatformWebController.pdb
+C:\Users\quontini\Desktop\Internato\batProject\PlatformWebController\bin\Debug\Newtonsoft.Json.dll
+C:\Users\quontini\Desktop\Internato\batProject\PlatformWebController\bin\Debug\websocket-sharp.dll
+C:\Users\quontini\Desktop\Internato\batProject\PlatformWebController\bin\Debug\websocket-sharp.pdb
+C:\Users\quontini\Desktop\Internato\batProject\PlatformWebController\bin\Debug\Newtonsoft.Json.xml
+C:\Users\quontini\Desktop\Internato\batProject\PlatformWebController\obj\Debug\PlatformWebController.csprojResolveAssemblyReference.cache
+C:\Users\quontini\Desktop\Internato\batProject\PlatformWebController\obj\Debug\PlatformWebController.exe
+C:\Users\quontini\Desktop\Internato\batProject\PlatformWebController\obj\Debug\PlatformWebController.pdb

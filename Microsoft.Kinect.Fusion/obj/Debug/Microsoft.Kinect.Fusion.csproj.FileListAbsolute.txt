@@ -16,3 +16,12 @@ C:\Users\Vakna_000\Desktop\Progetto\batProject\Microsoft.Kinect.Fusion\obj\Debug
 C:\Users\Vakna_000\Desktop\Progetto\batProject\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.csproj.GenerateResource.Cache
 C:\Users\Vakna_000\Desktop\Progetto\batProject\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.dll
 C:\Users\Vakna_000\Desktop\Progetto\batProject\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.pdb
+C:\Users\quontini\Desktop\Internato\batProject\Microsoft.Kinect.Fusion\bin\Debug\Microsoft.Kinect.Fusion.dll
+C:\Users\quontini\Desktop\Internato\batProject\Microsoft.Kinect.Fusion\bin\Debug\Microsoft.Kinect.Fusion.pdb
+C:\Users\quontini\Desktop\Internato\batProject\Microsoft.Kinect.Fusion\bin\Debug\Microsoft.Kinect.dll
+C:\Users\quontini\Desktop\Internato\batProject\Microsoft.Kinect.Fusion\bin\Debug\Microsoft.Kinect.xml
+C:\Users\quontini\Desktop\Internato\batProject\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.csprojResolveAssemblyReference.cache
+C:\Users\quontini\Desktop\Internato\batProject\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.Resources.resources
+C:\Users\quontini\Desktop\Internato\batProject\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.csproj.GenerateResource.Cache
+C:\Users\quontini\Desktop\Internato\batProject\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.dll
+C:\Users\quontini\Desktop\Internato\batProject\Microsoft.Kinect.Fusion\obj\Debug\Microsoft.Kinect.Fusion.pdb

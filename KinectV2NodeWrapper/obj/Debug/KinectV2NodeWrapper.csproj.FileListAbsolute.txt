@@ -16,3 +16,12 @@ C:\Users\Vakna_000\Desktop\Progetto\batProject\KinectV2NodeWrapper\bin\Debug\Mic
 C:\Users\Vakna_000\Desktop\Progetto\batProject\KinectV2NodeWrapper\obj\Debug\KinectV2NodeWrapper.csprojResolveAssemblyReference.cache
 C:\Users\Vakna_000\Desktop\Progetto\batProject\KinectV2NodeWrapper\obj\Debug\KinectV2NodeWrapper.dll
 C:\Users\Vakna_000\Desktop\Progetto\batProject\KinectV2NodeWrapper\obj\Debug\KinectV2NodeWrapper.pdb
+C:\Users\quontini\Desktop\Internato\batProject\KinectV2NodeWrapper\bin\Debug\KinectV2NodeWrapper.dll
+C:\Users\quontini\Desktop\Internato\batProject\KinectV2NodeWrapper\bin\Debug\KinectV2NodeWrapper.pdb
+C:\Users\quontini\Desktop\Internato\batProject\KinectV2NodeWrapper\bin\Debug\Microsoft.Kinect.dll
+C:\Users\quontini\Desktop\Internato\batProject\KinectV2NodeWrapper\bin\Debug\Microsoft.Kinect.Fusion.dll
+C:\Users\quontini\Desktop\Internato\batProject\KinectV2NodeWrapper\bin\Debug\Microsoft.Kinect.Fusion.pdb
+C:\Users\quontini\Desktop\Internato\batProject\KinectV2NodeWrapper\bin\Debug\Microsoft.Kinect.xml
+C:\Users\quontini\Desktop\Internato\batProject\KinectV2NodeWrapper\obj\Debug\KinectV2NodeWrapper.csprojResolveAssemblyReference.cache
+C:\Users\quontini\Desktop\Internato\batProject\KinectV2NodeWrapper\obj\Debug\KinectV2NodeWrapper.dll
+C:\Users\quontini\Desktop\Internato\batProject\KinectV2NodeWrapper\obj\Debug\KinectV2NodeWrapper.pdb

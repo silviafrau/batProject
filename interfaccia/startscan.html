@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="../KinectWebSocketServer/js/jquery-ui.theme.min.css">
 		<link rel="stylesheet" href="../KinectWebSocketServer/js/jquery-ui.structure.min.css">
 		<script src="../KinectWebSocketServer/js/jquery-ui.min.js"></script>
-		<link href="../KinectWebSocketServer/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../KinectWebSocketServer/css/bootstrap.css" rel="stylesheet">
 		<link href="../KinectWebSocketServer/css/style.css" rel="stylesheet">
 		<script type="text/javascript" src="../KinectWebSocketServer/js/BigInteger.min.js"></script>
 		<script type="text/javascript" src="../KinectWebSocketServer/js/Kinect2.js"></script>
@@ -22,167 +22,172 @@
 	</head>
 
 	<body id="body">
-		<h1 id="title">Inizio scansione</h1>
+	<div id="title">
+		<h1 id="testo1">Inizio scansione</h1>
+	</div>
+	<div id="div1">	
+			<div class="container" id="img_sx">
+			<canvas id="bodyCanvas" width="512" height="424"></canvas>
+					<script>
+					var fusion = new kinect2Fusion.Kinect2Fusion();
+					fusion.setReconstructionCanvas(document.getElementById('bodyCanvas'));
+					fusion.open(function () {
+						console.log("callback");
+					});
+					</script>
+			</div>
+			
+			<div class="row" id="centro">
+				<div class="col-md-4" id="panel-centro">
+					<div class="panel panel-primary" id="menu1">
+						<div class="panel-heading">Actions</div>
+						<div class="panel-body">
+							<button id="btn-save" type="button" class="btn btn-default btn-lg btn-block">
+								<span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
+								<span class="icon-label">Save Mesh</span>
+							</button>
+							<button id="btn-reset-rec" type="button" class="btn btn-default btn-lg btn-block">
+								<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+								<span class="icon-label">Reset Reconstruction</span>
+							</button>
+							<button id="btn-reset-camera" type="button" class="btn btn-default btn-lg btn-block">
+								<span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
+								<span class="icon-label">Reset Camera</span>
+							</button>
 
-		<div class="container">
-        <canvas id="bodyCanvas" width="512" height="424" style="position:absolute; top:36px; left:0px"></canvas>
-				<script>
-				var fusion = new kinect2Fusion.Kinect2Fusion();
-				fusion.setReconstructionCanvas(document.getElementById('bodyCanvas'));
-				fusion.open(function () {
-				    console.log("callback");
-				});
-				</script>
-
-
-		<div class="row">
-            <div class="col-md-4">
-                <div class="panel panel-primary" id="menu1" style="position:absolute; top:0.6px; left:450px">
-                    <div class="panel-heading">Actions</div>
-                    <div class="panel-body">
-                        <button id="btn-save" type="button" class="btn btn-default btn-lg btn-block">
-                            <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
-                            <span class="icon-label">Save Mesh</span>
-                        </button>
-                        <button id="btn-reset-rec" type="button" class="btn btn-default btn-lg btn-block">
-                            <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
-                            <span class="icon-label">Reset Reconstruction</span>
-                        </button>
-                        <button id="btn-reset-camera" type="button" class="btn btn-default btn-lg btn-block">
-                            <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
-                            <span class="icon-label">Reset Camera</span>
-                        </button>
-
-                    </div>
-                </div>
-
-
-                <div class="panel panel-primary" id="menu2" style="position:absolute; top:200px; left:450px">
-                    <div class="panel-heading">Image Options</div>
-                    <div class="panel-body">
-                        <h3>3D View Texturing</h3>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="rd-texture" id="rd-volume" value="option" checked> Volume
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="rd-texture" id="rd-color" value="option"> Color
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="rd-texture" id="rd-normals" value="option"> Normals
-                            </label>
-                        </div>
-                        <h3>Reconstruction</h3>
-
-                        <div class="checkbox">
-                            <label>
-                                <input id="ckb-pause" type="checkbox"> Pause Integration
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input id="ckb-camera-pose" type="checkbox" checked="checked"> Use Camera Pose Finder
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input id="ckb-mirror-depth" type="checkbox"> Mirror Depth
-                            </label>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input id="ckb-kinect-view" type="checkbox" checked> Kinect View
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8">
-
-                <div class="panel panel-primary" id="menu3" style="position:absolute; top:424px; left:-480px">
-                    <div class="panel-heading">Integration Settings</div>
-                    <div class="panel-body">
-                        <h3>Depth Threshold</h3>
-                        <p>
-                            <label for="depth-range">Range:</label>
-                            <input type="text" id="depth-range" readonly style="border:0; font-weight:bold;">
-                        </p>
-                        <div id="sl-depth-range"></div>
-
-                        <h3>Volume Max Integration Weight</h3>
-                        <p>
-                            <label for="">Value:</label>
-                            <input type="text" id="int-weight" readonly style="border:0; font-weight:bold;">
-                        </p>
-                        <div id="sl-int-weight"></div>
+						</div>
+					</div>
 
 
-                        <h3>Volume Voxel per Meter</h3>
-                        <p>
-                            <label for="">Value:</label>
-                            <input type="text" id="voxel-meter" readonly style="border:0; font-weight:bold;">
-                        </p>
-                        <div id="sl-voxel-meter"></div>
+					<div class="panel panel-primary" id="menu2">
+						<div class="panel-heading">Image Options</div>
+						<div class="panel-body">
+							<h3>3D View Texturing</h3>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rd-texture" id="rd-volume" value="option" checked> Volume
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rd-texture" id="rd-color" value="option"> Color
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="rd-texture" id="rd-normals" value="option"> Normals
+								</label>
+							</div>
+							<h3>Reconstruction</h3>
 
-                        <h3>Volume Voxel Resolution</h3>
-                        <p>
-                            <label for="">X:</label>
-                            <input type="text" id="res-x" readonly style="border:0; font-weight:bold;">
-                        </p>
-                        <div id="sl-res-x"></div>
-                        <p>
-                            <label for="">Y:</label>
-                            <input type="text" id="res-y" readonly style="border:0; font-weight:bold;">
-                        </p>
-                        <div id="sl-res-y"></div>
-                        <p>
-                            <label for="">Z:</label>
-                            <input type="text" id="res-z" readonly style="border:0; font-weight:bold;">
-                        </p>
-                        <div id="sl-res-z"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+							<div class="checkbox">
+								<label>
+									<input id="ckb-pause" type="checkbox"> Pause Integration
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input id="ckb-camera-pose" type="checkbox" checked="checked"> Use Camera Pose Finder
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input id="ckb-mirror-depth" type="checkbox"> Mirror Depth
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input id="ckb-kinect-view" type="checkbox" checked> Kinect View
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+					<div class="container" id="img_dx">
+						<img src="" id="rgbImg" width="512" height="424"/>
+						<canvas id="rgbCanvas" width="512" height="424" />
+					<script>
+							var sensor = new kinect2.Sensor();
 
-				<div class="container">
-		        <img src="" id="rgbImg" style="position:absolute; top:36px; right:0px" width="512" height="424"/>
-		        <canvas id="rgbCanvas" width="512" height="424"  style="position:absolute; top:0px; left:0px" />
-		        <script>
-		            var sensor = new kinect2.Sensor();
+							sensor.onBodyFrame = function (bodyArray) {
+								for (var b in bodyArray) {
+									var body = bodyArray[b];
+									var canvas = document.getElementById('rgbCanvas');
+									var context = canvas.getContext('2d');
+									var pos = body.joints[kinect2.JointType.HandLeft].rgbPosition;
+									var centerX = pos.x;
+									var centerY = pos.y;
+									var radius = 30;
 
-		            sensor.onBodyFrame = function (bodyArray) {
-		                for (var b in bodyArray) {
-		                    var body = bodyArray[b];
-		                    var canvas = document.getElementById('rgbCanvas');
-		                    var context = canvas.getContext('2d');
-		                    var pos = body.joints[kinect2.JointType.HandLeft].rgbPosition;
-		                    var centerX = pos.x;
-		                    var centerY = pos.y;
-		                    var radius = 30;
+									context.clearRect(0, 0, canvas.width, canvas.height);
+									context.beginPath();
+									context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+									context.fillStyle = 'green';
+									context.fill();
+									context.lineWidth = 5;
+									context.strokeStyle = '#003300';
+									context.stroke();
+								}
+							}
 
-		                    context.clearRect(0, 0, canvas.width, canvas.height);
-		                    context.beginPath();
-		                    context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-		                    context.fillStyle = 'green';
-		                    context.fill();
-		                    context.lineWidth = 5;
-		                    context.strokeStyle = '#003300';
-		                    context.stroke();
-		                }
-		            }
+							sensor.open(function () {
+								sensor.setRgbImage(document.getElementById('rgbImg'));
+								sensor.receiveColorFrames(true);
+								sensor.receiveBodyFrames(true);
+							});
+					</script>
+				 </div>
+		</div>
+	</div>
+	<div id="div2">
+		<div class="col-md-8">
+			<div class="panel panel-primary" id="menu3">
+						<div class="panel-heading">Integration Settings</div>
+						<div class="panel-body">
+							<h3>Depth Threshold</h3>
+							<p>
+								<label for="depth-range">Range:</label>
+								<input type="text" id="depth-range" readonly style="border:0; font-weight:bold;">
+							</p>
+							<div id="sl-depth-range"></div>
 
-		            sensor.open(function () {
-		                sensor.setRgbImage(document.getElementById('rgbImg'));
-		                sensor.receiveColorFrames(true);
-		                sensor.receiveBodyFrames(true);
-		            });
-		        </script>
-		     </div>
+							<h3>Volume Max Integration Weight</h3>
+							<p>
+								<label for="">Value:</label>
+								<input type="text" id="int-weight" readonly style="border:0; font-weight:bold;">
+							</p>
+							<div id="sl-int-weight"></div>
+
+
+							<h3>Volume Voxel per Meter</h3>
+							<p>
+								<label for="">Value:</label>
+								<input type="text" id="voxel-meter" readonly style="border:0; font-weight:bold;">
+							</p>
+							<div id="sl-voxel-meter"></div>
+
+							<h3>Volume Voxel Resolution</h3>
+							<p>
+								<label for="">X:</label>
+								<input type="text" id="res-x" readonly style="border:0; font-weight:bold;">
+							</p>
+							<div id="sl-res-x"></div>
+							<p>
+								<label for="">Y:</label>
+								<input type="text" id="res-y" readonly style="border:0; font-weight:bold;">
+							</p>
+							<div id="sl-res-y"></div>
+							<p>
+								<label for="">Z:</label>
+								<input type="text" id="res-z" readonly style="border:0; font-weight:bold;">
+							</p>
+							<div id="sl-res-z"></div>
+						</div>
+					</div>
+				</div>
+	</div>
 		<!-- Creazione Mesh(Fusion) -->
         <!-- modal file dialog -->
         <div class="modal fade" tabindex="-1" role="dialog" id="create-mesh-modal">
@@ -216,14 +221,10 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-
-    </div>
-	<div>
+	
+		<div>
 			<button type="submit" id="home" onclick="window.location.href='./interfaccia.html#'">Home</button>
-
 		</div>
-
-
 	</body>
 
 </html>
