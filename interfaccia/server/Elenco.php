@@ -1,5 +1,5 @@
 <?php
-
+/*
 function converti($array){
   $array_json = array();
   foreach($array as $elemento){
@@ -7,16 +7,16 @@ function converti($array){
     array_push ($array_json, $decode);
   }
   return $array_json;
-}
+}*/
 
 
-  $fileElenco =fopen("ElencoMesh","r+");
+  $fileElenco =fopen("./ElencoMesh.json","r+");
 
   $risult=fgets($fileElenco);
-  $array= explode(';',$result);
-	$elementi_js = converti($array);
+  /*$array= explode(';',$result);
+	$elementi_js = converti($array);*/
 
-  echo json_encode($elementi_js);
+  echo $risult;
 
 
 

@@ -10,17 +10,17 @@
 		<div>
 			<button id="home" onclick="window.location.href='interfaccia.html'">Home</button>
 		</div>
-		<form class="centro" action="./server/database.php" method="post">
+		<form class="centro">
 
 			<div>
 				<h3 id="Mesh">Mesh:</h3>
 
 				<div id="name">
-					<select name="elenco" id="elenco">
-							<option value="Salvatore" selected>Salvatore </option>
-							<option value="Silvia">Silvia</option>
+					<select name="elenco" id="elenco" action="./server/Immaggini.php" method="post">
+							<option value="vuoto" ></option>
+							<!--<option value="Silvia">Silvia</option>
 							<option value="Massimiliano">Massimiliano</option>
-							<option value="Davide">Davide</option>
+							<option value="Davide">Davide</option>-->
 					</select>
 
 						<button type="button" name="button" id="RINOMINA">Rinomina</button>
