@@ -11,6 +11,21 @@ function inserimentoElenco(Nome,url){
   $("#elenco").append(elementoMenu);
 
 }
+function RinominaElemento(name,riname){
+  $.ajax({
+    url: "./server/Riname.php",
+    type: "POST",
+    data: {nome: name, rinome: riname},
+    datatype:"json",
+    success:
+      function(data){
+        console.log("nome cambiato " + data);
+        },
+    error:function(e){
+      console.log("errore nell'interrogazione della pagina Riname " + e.message);
+    }
+  })
+}
 
 function inserisciImmaggine(name){
   $.ajax({
@@ -62,28 +77,37 @@ function creaElenco(){
     }
   })
 }
+
 $(document).ready(function(){
 
   creaElenco();
+
+  $("#RINAME").hide();
+  $("#ButtonRiname").hide();
 
   $("#elenco").click(function(){
         var Ricerca = $("#elenco").val();
         console.log(Ricerca);
         inserisciImmaggine(Ricerca);
-
+        $("#RINAME").hide();
+        $("#ButtonRiname").hide();
   })
 
   $("#RINOMINA").click(function(){
-    var nome=$("<input>");
-    $(nome).attr("type","text");
-    $(nome).attr("id","RINAME");
+    $("#RINAME").show();
+    $("#ButtonRiname").show();
 
-    var pulsante=$("<button></button>");
-    $(pulsante).attr("type","button");
-    $(pulsante).attr("id","conferma");
-    $(pulsante).text("CONFERMA");
-    $("#name").append(nome);
-    $("#name").append(pulsante);
+  });
+
+  $("#ButtonRiname").click(function(){
+
+    var nome = $("#elenco").val();
+    var rinomina= $("#RINAME").val();
+
+    RinominaElemento(nome,rinomina);
+
+    $("#RINAME").hide();
+    $("#ButtonRiname").hide();
 
   });
 
