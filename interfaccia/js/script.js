@@ -105,11 +105,13 @@ $(document).ready(function(){
         var Ricerca = $("#elenco").val();
         //console.log(Ricerca);
         inserisciImmaggine(Ricerca);
-        $("#Riname").hide();
+        $("#RINAME").hide();
+        $("#ButtonRiname").hide();
   })
 
   $("#RINOMINA").click(function(){
-    $("#Riname").show();
+    $("#RINAME").show();
+    $("#ButtonRiname").show();
 
   });
 

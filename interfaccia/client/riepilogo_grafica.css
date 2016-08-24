@@ -16,7 +16,7 @@ body{
 
 #name{
 	display: block;
-	width:35%;
+	width:100%;
 	margin-left:30px;
 	margin-top: -10px;
 	/*background-color: #397bb0;*/
@@ -43,7 +43,18 @@ body{
 }
 
 #Riname{
-	margin-left: 1.5%;
+
+	margin-left: 30px;
+	margin-top: 0.3%;
+	margin-right: 30px;
+	border: solid 1px #365772;
+	width: 35.9%;
+	/*<div style="-moz-box-shadow: 1px 1px 3px 2px #204563;*/
+	-webkit-box-shadow: 1px 1px 1px 1x #204563;
+	box-shadow:         1px 1px 1px 1px #204563;
+	background-image: url(./vero.png)no-repeat;
+	
+	/*Div content here</div>*/
 }
 
 #RINOMINA {
@@ -55,7 +66,8 @@ body{
  color: #fff;
  padding: 10px 20px;
  border: solid 1px #0076a3;
- background: #0095cd;
+ background: #365772;
+ border-radius: 8px; 
 }
 
 #CANCELLA {
@@ -66,8 +78,9 @@ body{
  font: bold 12px Arial, Helvetica, sans-serif;
  color: #fff;
  padding: 10px 20px;
- border: solid 1px #0076a3;
- background: #0095cd;
+ border: solid 1px #365772;
+ background: #365772;
+ border-radius: 8px; 
 }
 
 #VISUALIZZA {
@@ -79,8 +92,36 @@ body{
  color: #fff;
  padding: 10px 20px;
  border: solid 1px #0076a3;
- background: #0095cd;
+ background: #365772;
+ border-radius: 8px; 
 }
 #ButtonRiname {
     margin-left: 0.5%;
+}
+
+#elenco{
+	width: 190px;
+
+}
+
+#Foto{
+	left:500px !important;
+
+
+}
+
+#ButtonRiname{
+	outline: none;
+	 cursor: pointer;
+	 text-align: center;
+	 text-decoration: none;
+	 font: bold 12px Arial, Helvetica, sans-serif;
+	 color: #fff;
+	 padding: 10px 20px;
+	 border: solid 1px #365772;
+	/* background: #627c91;*/
+	 border-radius: 3px; 
+	 width: 8%;
+	 height: 5%;
+	
 }
