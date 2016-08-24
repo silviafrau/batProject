@@ -11,6 +11,24 @@ function inserimentoElenco(Nome,url){
   $("#elenco").append(elementoMenu);
 
 }
+
+function EliminaElemento(name){
+  $.ajax({
+    url: "./server/Elimina.php",
+    type: "POST",
+    data: {nome: name},
+    datatype:"json",
+    success:
+      function(data){
+        console.log(data);
+        //var jsonData = JSON.parse(data);
+        },
+    error:function(e){
+      console.log("errore nell'interrogazione della pagina Riname " + e.message);
+    }
+  })
+}
+
 function RinominaElemento(name,riname){
   $.ajax({
     url: "./server/Riname.php",
@@ -108,13 +126,15 @@ $(document).ready(function(){
 
     $("#RINAME").hide();
     $("#ButtonRiname").hide();
-
+    window.location.reload();
   });
 
   $("#VISUALIZZA").click(function(){
   });
 
   $("#CANCELLA").click(function(){
+    var nome = $("#elenco").val();
+    EliminaElemento(nome);
   });
 
 });
