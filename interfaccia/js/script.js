@@ -131,6 +131,7 @@ $(document).ready(function(){
   $("#CANCELLA").click(function(){
     var nome = $("#elenco").val();
     EliminaElemento(nome);
+    window.location.reload();
   });
 
 });
