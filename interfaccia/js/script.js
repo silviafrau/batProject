@@ -21,8 +21,7 @@ function EliminaElemento(name){
     success:
       function(data){
         console.log(data);
-        //var jsonData = JSON.parse(data);
-        },
+      },
     error:function(e){
       console.log("errore nell'interrogazione della pagina Riname " + e.message);
     }
@@ -53,7 +52,7 @@ function inserisciImmaggine(name){
     datatype:"json",
     success:
       function(data){
-        console.log(data);
+        //console.log(data);
           var jsonData = JSON.parse(data);
             for(i in jsonData){
               if(jsonData[i].nome == name){//viene cercata la posizione dell'elemento selezionato
@@ -67,7 +66,7 @@ function inserisciImmaggine(name){
                 img.width="500";
                 img.height="500";
                 img.value=jsonData[i].Nome;
-                img.left="0";
+                //img.left="500";
                 document.body.appendChild(img);
               }
             }
@@ -100,12 +99,11 @@ $(document).ready(function(){
 
   creaElenco();
 
-  $("#RINAME").hide();
-  $("#ButtonRiname").hide();
+  $("#Riname").hide();
 
   $("#elenco").click(function(){
         var Ricerca = $("#elenco").val();
-        console.log(Ricerca);
+        //console.log(Ricerca);
         inserisciImmaggine(Ricerca);
         $("#RINAME").hide();
         $("#ButtonRiname").hide();
