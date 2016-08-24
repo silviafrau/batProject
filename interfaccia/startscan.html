@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,16 +27,15 @@
 	</div>
 	<div id="div1">	
 			<div class="container" id="img_sx">
-			<canvas id="bodyCanvas" width="512" height="424"></canvas>
-					<script>
-					var fusion = new kinect2Fusion.Kinect2Fusion();
-					fusion.setReconstructionCanvas(document.getElementById('bodyCanvas'));
-					fusion.open(function () {
-						console.log("callback");
-					});
-					</script>
+			    <canvas id="bodyCanvas"></canvas>
+					    <script>
+					    var fusion = new kinect2Fusion.Kinect2Fusion();
+					    fusion.setReconstructionCanvas(document.getElementById('bodyCanvas'));
+					    fusion.open(function () {
+						    console.log("callback");
+					    });
+					    </script>
 			</div>
-			
 			<div class="row" id="centro">
 				<div class="col-md-4" id="panel-centro">
 					<div class="panel panel-primary" id="menu1">
@@ -104,10 +103,11 @@
 					</div>
 				</div>
 			</div>
+
 	
 					<div class="container" id="img_dx">
-						<img src="" id="rgbImg" width="512" height="424"/>
-						<canvas id="rgbCanvas" width="512" height="424" />
+						<img src="" id="rgbImg" width="708.5" height="551.2"/>
+						<canvas id="rgbCanvas" width="708.5" height="551.2" />
 					<script>
 							var sensor = new kinect2.Sensor();
 
@@ -140,7 +140,8 @@
 					</script>
 				 </div>
 		</div>
-	</div>
+    </div>
+	
 	<div id="div2">
 		<div class="col-md-8">
 			<div class="panel panel-primary" id="menu3">
