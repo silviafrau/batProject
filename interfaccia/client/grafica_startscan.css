@@ -5,7 +5,7 @@
 	width: 100%;
 	height: 4%;
     background-color: #204563;
-}
+}@import url('file:///C:\Users\quontini\Desktop\Internato\batProject\interfaccia\client\grafica.css');
 
 #testo1{
 	margin: auto;
@@ -60,25 +60,27 @@
 	top: 0px;
 }
 
+#rgbCanvas{
+
+    width: 100% !important; 
+
+}
+
 #bodyCanvas{
     position: absolute;
-    top: 0px !important;
-    width:708.5px!important;
-    height:551.19px!important;
-    left: 0px !important;
+   
 }
 
 #img_sx{
   position: relative;
-  width: 100%;
-  height: 100%;
+  
 }
 
 
 #rgbImg{
 	position:absolute !important;
     top: 0.6%;
-    left: 0.6%;
+    width: 100%;
 }
 
 /* #opzioni{
@@ -101,9 +103,10 @@
 
 #centro{
 	position: absolute;
-	height: 273px;
-	width: 589px;
-	right: 25%;
+	height: 100%;
+	width: 14.5%;
+	right: 45%;
+    top: -0.6%;
 }
 
 #panel-centro{
@@ -117,6 +120,7 @@
 #menu2{
 	position: relative;
 	top: -15px;
+    height: 153%
 }
 
 #div1{
@@ -134,25 +138,24 @@
 	//border: 2px;
 }
 
-.col-md-8 {
+/*.col-md-8 {
     position: relative;
     width: 1808px !important;
     height: 1% !important;
     left: 2px;
     top: -1px;
-}
+}*/
 
 .col-md-4 {
     position: absolute !important;
-    width: 45.7% !important;
-    height: 100% !important;
-    right: 51.20% !important;
-    top: 1%;
+    width: 100% !important;
+    height: 40% !important;
+ 
 }
 
 .container{
 
-    width: 42.5% !important;
+    width: 37.5% !important;
 
 
 }
