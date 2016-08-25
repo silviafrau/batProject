@@ -110,6 +110,8 @@ $(document).ready(function(){
 
   $("#RINOMINA").click(function(){
     $("#Riname").show();
+    $("#name").hide();
+    $("#Mesh").hide();
 
   });
 
@@ -122,6 +124,8 @@ $(document).ready(function(){
 
     $("#RINAME").hide();
     $("#ButtonRiname").hide();
+    $("#name").show();
+    $("#Mesh").show();
     window.location.reload();
   });
 
