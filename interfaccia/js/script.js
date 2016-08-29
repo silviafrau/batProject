@@ -122,11 +122,16 @@ $(document).ready(function(){
 
     RinominaElemento(nome,rinomina);
 
-    $("#RINAME").hide();
-    $("#ButtonRiname").hide();
+    $("#Riname").hide();
     $("#name").show();
     $("#Mesh").show();
     window.location.reload();
+  });
+
+  $("#ButtonX").click(function(){
+    $("#Riname").hide();
+    $("#name").show();
+    $("#Mesh").show();
   });
 
   $("#VISUALIZZA").click(function(){

@@ -60,21 +60,26 @@ body{
 }
 
 #Pulsante{
-	margin-top: -55.5%;
-	margin-left: 40%;
+	margin-top: -59%;
+	margin-left: 45%;
+}
+
+#ButtonRiname{
+	width: 25px;
+	height: 25px;
 }
 
 #ButtonX{
-	width: 11%;
-	height: 55%;
+	width: 25px;
+	height: 25px;
 	margin-left: 55%;
-	margin-top: -8%;
+	margin-top: -7.5%;
 }
 
 #InserisciTesto {
 	height: 300%;
 	margin-right: 0%;
-	margin-left: -52%;
+	margin-left: -50%;
 	width: 150%;
 }
 
@@ -130,20 +135,4 @@ body{
 
 #Foto{
 	margin-left: 30% ;
-}
-
-#ButtonRiname{
-	outline: none;
-	 cursor: pointer;
-	 text-align: center;
-	 text-decoration: none;
-	 font: bold 12px Arial, Helvetica, sans-serif;
-	 color: #fff;
-	 padding: 10px 20px;
-	 border: solid 1px #365772;
-	/* background: #627c91;*/
-	 border-radius: 3px;
-	 width: 8%;
-	 height: 5%;
-
 }
